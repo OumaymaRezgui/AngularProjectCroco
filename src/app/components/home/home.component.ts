@@ -6,12 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  //Déclaration des variables globales
+  x : any;
+  constructor() {}
 
   ngOnInit(): void {
   }
     //Déclaration d'une fonction
     somme(a,b){
+      //Déclaration des variables locales
+      let x : any;
     }
 }
