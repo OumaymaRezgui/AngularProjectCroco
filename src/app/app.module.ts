@@ -16,6 +16,11 @@ import { ChefsComponent } from './components/chefs/chefs.component';
 import { ReservationComponent } from './components/reservation/reservation.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
 import { NewsComponent } from './components/news/news.component';
+import { BindingComponent } from './components/binding/binding.component';
+import { AddAdminComponent } from './components/add-admin/add-admin.component';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { AddChefComponent } from './components/add-chef/add-chef.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -32,13 +37,19 @@ import { NewsComponent } from './components/news/news.component';
     ChefsComponent,
     ReservationComponent,
     TestimonialsComponent,
-    NewsComponent
+    NewsComponent,
+    BindingComponent,
+    AddAdminComponent,
+    AddChefComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

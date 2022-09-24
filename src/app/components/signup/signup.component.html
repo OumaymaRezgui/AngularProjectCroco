@@ -1,0 +1,90 @@
+<section class="regervation_part section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="section_tittle">
+                    <h2>signUp</h2>
+                    <h2 *ngIf="test">test</h2>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="regervation_part_iner">
+                    <form [formGroup]="signupForm">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" id="firstName" placeholder="First Name *" formControlName="firstName">
+                                <div *ngIf="signupForm.controls['firstName'].invalid && (signupForm.controls['firstName'].dirty || signupForm.controls['firstName'].touched)">
+                                    <div *ngIf="signupForm.controls['firstName'].errors.required" class="text-danger">
+                                        First Name is required
+                                    </div>
+                                    <div *ngIf="signupForm.controls['firstName'].errors.minlength" class="text-danger">
+                                        First Name must have at least 3 characters
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" id="lastName" placeholder="Last Name *" formControlName="lastName">
+                                <div *ngIf="signupForm.controls['lastName'].invalid && (signupForm.controls['lastName'].dirty || signupForm.controls['lastName'].touched)">
+                                    <div *ngIf="signupForm.controls['lastName'].errors.required" class="text-danger">
+                                        Last Name is required
+                                    </div>
+                                    <div *ngIf="signupForm.controls['lastName'].errors.minlength" class="text-danger">
+                                        Last Name must have at least 3 characters
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="email" class="form-control" id="email" placeholder="Email *" formControlName="email">
+                                <div *ngIf="signupForm.controls['email'].invalid && (signupForm.controls['email'].dirty || signupForm.controls['email'].touched)">
+                                    <div *ngIf="signupForm.controls['email'].errors.required" class="text-danger">
+                                        Email is required
+                                    </div>
+                                    <div *ngIf="signupForm.controls['email'].errors.email" class="text-danger">
+                                        Email must be .......@....com
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="password" class="form-control" id="password" placeholder="Password *" formControlName="password">
+                                <div *ngIf="signupForm.controls['password'].invalid && (signupForm.controls['password'].dirty || signupForm.controls['password'].touched)">
+                                    <div *ngIf="signupForm.controls['password'].errors.required" class="text-danger">
+                                        Password is required
+                                    </div>
+                                    <div *ngIf="signupForm.controls['password'].errors.minlength" class="text-danger">
+                                        Last Name must have at least 3 characters
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="password" class="form-control" id="passwordconfirm" placeholder="Password Confirm*" formControlName="passwordconfirm">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="tel" class="form-control" id="tel" placeholder="tel *" formControlName="tel">
+                                <div *ngIf="signupForm.controls['tel'].invalid && (signupForm.controls['tel'].dirty || signupForm.controls['tel'].touched)">
+                                    <div *ngIf="signupForm.controls['tel'].errors.required" class="text-danger">
+                                        tel is required
+                                    </div>
+                                    <div *ngIf="signupForm.controls['tel'].errors.minlength" class="text-danger">
+                                        tel must have at least 13 characters
+                                    </div>
+                                    <div *ngIf="signupForm.controls['tel'].errors.maxlength" class="text-danger">
+                                        tel must have at least 3 characters
+                                    </div>
+                                    <div *ngIf="signupForm.controls['tel'].errors.pattern" class="text-danger">
+                                        tel invalid
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="regerv_btn">
+                            <button class="btn_4" (click)="signup(signupForm.value)">signup</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
