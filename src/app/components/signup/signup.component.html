@@ -60,6 +60,14 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <input type="password" class="form-control" id="passwordconfirm" placeholder="Password Confirm*" formControlName="passwordconfirm">
+                                <div *ngIf="signupForm.controls['passwordconfirm'].invalid && (signupForm.controls['passwordconfirm'].dirty || signupForm.controls['passwordconfirm'].touched)">
+                                    <div *ngIf="signupForm.controls['passwordconfirm'].errors.required" class="text-danger">
+                                        password confirm is required
+                                    </div>
+                                    <div *ngIf="signupForm.controls['passwordconfirm'].errors.mustMatch" class="text-danger">
+                                        password not matched 
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group col-md-6">
                                 <input type="tel" class="form-control" id="tel" placeholder="tel *" formControlName="tel">

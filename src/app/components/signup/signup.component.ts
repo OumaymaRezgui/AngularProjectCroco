@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MustMatch } from '../confirmPwd';
 
 @Component({
   selector: 'app-signup',
@@ -20,6 +21,9 @@ export class SignupComponent implements OnInit {
       password : ['',[Validators.required,Validators.minLength(3)]],
       passwordconfirm : [''],
       tel :  ['',[Validators.required,Validators.pattern("^((\\+91-?)|0)?[0-9]{8,13}$")]],
+    },
+    {
+      validator : MustMatch('password','passwordconfirm')
     })
   }
 
