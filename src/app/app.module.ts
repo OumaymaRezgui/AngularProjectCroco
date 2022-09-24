@@ -21,6 +21,8 @@ import { AddAdminComponent } from './components/add-admin/add-admin.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AddChefComponent } from './components/add-chef/add-chef.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-admin.component';
+import { AddPlatComponent } from './components/add-plat/add-plat.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { SignupComponent } from './components/signup/signup.component';
     BindingComponent,
     AddAdminComponent,
     AddChefComponent,
-    SignupComponent
+    SignupComponent,
+    DashboardAdminComponent,
+    AddPlatComponent
   ],
   imports: [
     BrowserModule,
