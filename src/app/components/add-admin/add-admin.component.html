@@ -3,14 +3,14 @@
         <div class="row">
             <div class="col-xl-5">
                 <div class="section_tittle">
-                    <h2>add admin</h2>
+                    <h2>{{title}}</h2>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-6">
                 <div class="regervation_part_iner">
-                    <form #addAdminForm="ngForm" (ngSubmit)="addAdmin()">
+                    <form #addAdminForm="ngForm" (ngSubmit)="saveAdmin()">
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <input type="text" class="form-control" id="firstName" placeholder="First Name *" [(ngModel)]="user.firstName" [ngModelOptions]="{standalone : true}">
@@ -29,7 +29,7 @@
                             </div>
                         </div>
                         <div class="regerv_btn">
-                            <button class="btn_4">Add</button>
+                            <button class="btn_4">{{title}}</button>
                         </div>
                     </form>
                 </div>

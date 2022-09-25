@@ -31,28 +31,41 @@ export class AddChefComponent implements OnInit {
     this.id = this.activatedRoute.snapshot.paramMap.get('id')
     console.log(this.id);
     if(this.id){
-      
-        if(this.id){
-          this.title = "edit chef"
-          for (let i = 0; i < this.users.length; i++) {
-            if (this.users[i].id == this.id){
-              this.chef = this.users[i]
-            }
-          }  
+      if(this.id){
+        this.title = "Edit chef"
+        for (let i = 0; i < this.users.length; i++) {
+          if (this.users[i].id == this.id){
+            this.chef = this.users[i]
+          }
+        }  
       }
     }else{
       this.title = "add chef"
     }
     
   }
-    addChef(){
-      console.log(this.chef)
-      let idUser = JSON.parse(localStorage.getItem("idUser") || "1")
-      let chefs = JSON.parse(localStorage.getItem("users") || "[]")
-      this.chef.id = idUser
-      this.chef.role = "chef"
-      chefs.push(this.chef)
-      localStorage.setItem("users",JSON.stringify(chefs))
-      localStorage.setItem("idUser",idUser + 1)
+    saveChef(){
+
+      if(this.id){
+        //edit
+        for (let i = 0; i < this.users.length; i++) {
+          if(this.users[i].id == this.id){
+            this.users[i] = this.chef
+            break;
+          }          
+        }
+        localStorage.setItem("users",JSON.stringify(this.users))
+      }
+      else{
+        //add
+        console.log(this.chef)
+        let idUser = JSON.parse(localStorage.getItem("idUser") || "1")
+        let chefs = JSON.parse(localStorage.getItem("users") || "[]")
+        this.chef.id = idUser
+        this.chef.role = "chef"
+        chefs.push(this.chef)
+        localStorage.setItem("users",JSON.stringify(chefs))
+        localStorage.setItem("idUser",idUser + 1)
+      }
     }
   }

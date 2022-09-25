@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="regervation_part_iner">
-                    <form #addChefForm="ngForm" (ngSubmit)="addChef()">
+                    <form #addChefForm="ngForm" (ngSubmit)="saveChef()">
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <input type="text" class="form-control" id="firstName" placeholder="First Name *" [(ngModel)]="chef.firstName" [ngModelOptions]="{standalone : true}">
