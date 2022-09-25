@@ -43,16 +43,38 @@
                                     <td>{{u.experience}}</td>
                                     <td>{{u.date}}</td>
                                     <td>
-                                        <button type="button" class="btn btn-danger">Edit</button>
+                                        <button type="button" class="btn btn-danger" (click)="deleteUser(u.id,u.role)">Delete</button>
                                     </td>
                                     <td>
-                                        <button type="button" class="btn btn-warning">Delete</button>
+                                        <button type="button" class="btn btn-warning" (click)="editUser(u.id,u.role)"> Edit</button>
                                     </td>
                                   </tr>
                                 </tbody>
                               </table>
                         </div>
-                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
+                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                          <table class="table table-dark">
+                            <thead>
+                              <tr>
+                                <th scope="col">platName</th>
+                                <th scope="col">price</th>
+                                <th scope="col">description</th>
+                                <th scope="col">chef</th>
+
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let p of plats">
+                                <td>{{p.platName}}</td>
+                                <td>{{p.price}}</td>
+                                <td>{{p.description}}</td>
+                                <div *ngFor="let u of users">
+                                  <td *ngIf="u.id == p.idChef">{{u.firstName}} {{u.lastName}}</td>
+                               </div>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
                       </div>
                 </div>
             </div>

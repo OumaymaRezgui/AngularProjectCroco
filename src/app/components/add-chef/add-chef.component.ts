@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup , FormBuilder } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -9,8 +10,11 @@ import { FormGroup , FormBuilder } from '@angular/forms';
 })
 export class AddChefComponent implements OnInit {
   addChefForm : FormGroup;
-  chef : any = {};
-  constructor(private formBuilder : FormBuilder) {}
+  chef  : any = {};
+  id    : any = {};
+  title : any = {};
+  users : any = {};
+  constructor(private formBuilder : FormBuilder, private activatedRoute : ActivatedRoute) {}
 
   ngOnInit(): void {
     this.addChefForm = this.formBuilder.group({
@@ -22,15 +26,33 @@ export class AddChefComponent implements OnInit {
       experience : [''],
       date : [''],
     })
+
+    this.users = JSON.parse(localStorage.getItem("users") || '[]');
+    this.id = this.activatedRoute.snapshot.paramMap.get('id')
+    console.log(this.id);
+    if(this.id){
+      
+        if(this.id){
+          this.title = "edit chef"
+          for (let i = 0; i < this.users.length; i++) {
+            if (this.users[i].id == this.id){
+              this.chef = this.users[i]
+            }
+          }  
+      }
+    }else{
+      this.title = "add chef"
+    }
+    
   }
     addChef(){
       console.log(this.chef)
-      let idChef = JSON.parse(localStorage.getItem("idChef") || "1")
-      let chefs = JSON.parse(localStorage.getItem("chefs") || "[]")
-      this.chef.id = idChef
+      let idUser = JSON.parse(localStorage.getItem("idUser") || "1")
+      let chefs = JSON.parse(localStorage.getItem("users") || "[]")
+      this.chef.id = idUser
       this.chef.role = "chef"
       chefs.push(this.chef)
-      localStorage.setItem("chefs",JSON.stringify(chefs))
-      localStorage.setItem("idChef",idChef + 1)
+      localStorage.setItem("users",JSON.stringify(chefs))
+      localStorage.setItem("idUser",idUser + 1)
     }
   }

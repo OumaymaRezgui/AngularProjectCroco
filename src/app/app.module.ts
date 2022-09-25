@@ -23,6 +23,7 @@ import { AddChefComponent } from './components/add-chef/add-chef.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-admin.component';
 import { AddPlatComponent } from './components/add-plat/add-plat.component';
+import { DashboardChefComponent } from './components/dashboard-chef/dashboard-chef.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { AddPlatComponent } from './components/add-plat/add-plat.component';
     AddChefComponent,
     SignupComponent,
     DashboardAdminComponent,
-    AddPlatComponent
+    AddPlatComponent,
+    DashboardChefComponent
   ],
   imports: [
     BrowserModule,
