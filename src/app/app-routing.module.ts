@@ -23,6 +23,7 @@ const routes: Routes = [
   // dynamic path
   {path : "editUser/:id", component : AddAdminComponent},
   {path : "editChef/:id", component : AddChefComponent},
+  {path : "editPlat/:id", component : AddPlatComponent},
 ];
 
 @NgModule({
