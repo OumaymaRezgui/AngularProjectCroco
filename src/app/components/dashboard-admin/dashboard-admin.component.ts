@@ -50,4 +50,20 @@ export class DashboardAdminComponent implements OnInit {
     }
   }
 
+  getcolor(speciality){
+    switch (speciality) {
+      case 'TN':
+        return "red";
+      break;
+      case 'FR':
+        return "blue";
+      break;
+      case 'IT':
+        return "blue";
+      break;
+      default:
+        break;
+    }
+  }
+
 }

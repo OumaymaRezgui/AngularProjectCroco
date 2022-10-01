@@ -39,7 +39,9 @@
                                     <td>{{u.email}}</td>
                                     <td>{{u.tel}}</td>
                                     <td>{{u.role}}</td>
-                                    <td>{{u.speciality}}</td>
+                                    <td [ngClass]="{'red'   : u.speciality == 'TN',
+                                                    'blue'  : u.speciality == 'FR',
+                                                    'green' : u.speciality == 'IT'}">{{u.speciality}}</td>
                                     <td>{{u.experience}}</td>
                                     <td>{{u.date}}</td>
                                     <td>
