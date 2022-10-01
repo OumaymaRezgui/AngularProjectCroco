@@ -43,7 +43,7 @@
                                                     'blue'  : u.speciality == 'FR',
                                                     'green' : u.speciality == 'IT'}">{{u.speciality}}</td>
                                     <td>{{u.experience}}</td>
-                                    <td>{{u.date}}</td>
+                                    <td>{{u.date | date}}</td>
                                     <td>
                                         <button type="button" class="btn btn-danger" (click)="deleteUser(u.id,u.role)">Delete</button>
                                     </td>

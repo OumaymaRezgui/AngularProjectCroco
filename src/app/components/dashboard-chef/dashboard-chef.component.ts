@@ -23,7 +23,7 @@ export class DashboardChefComponent implements OnInit {
       }
     }
   }
-
+ 
   deleteplat(id:any){
     let pos:any;
    for (let i = 0; i< this.plats.length; i++) {
@@ -40,4 +40,5 @@ export class DashboardChefComponent implements OnInit {
        this.router.navigate([`editPlat/${id}`]);
      }
   }
+   
 }

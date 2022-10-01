@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./popular-dishes.component.css']
 })
 export class PopularDishesComponent implements OnInit {
-
+  plats: any;
   constructor() { }
 
   ngOnInit(): void {
+    this.plats = JSON.parse(localStorage.getItem("plats") || "[]")
   }
 
 }
