@@ -12,5 +12,7 @@ export class PopularDishesComponent implements OnInit {
   ngOnInit(): void {
     this.plats = JSON.parse(localStorage.getItem("plats") || "[]")
   }
-
+ update(e){
+  this.plats = e ;
+ }
 }

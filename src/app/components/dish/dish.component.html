@@ -9,6 +9,6 @@
         <!-- <ng-container *ngFor="let u of users">
             <p *ngIF="u.id == childDish.idChef"> by chef{{u.firstName}} {{u.lastName}} </p> 
         </ng-container> -->
-        <a href="#" class="btn_3">Read More <img src="assets/img/icon/left_2.svg" alt=""></a>
+        <button (click)="deletePlat(childDish.id)">Delete</button>
     </div>
 </div>

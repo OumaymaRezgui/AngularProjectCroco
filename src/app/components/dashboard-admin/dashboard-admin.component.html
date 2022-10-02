@@ -34,7 +34,7 @@
                                 </thead>
                                 <tbody>
                                   <tr *ngFor="let u of users">
-                                    <td>{{u.firstName}}</td>
+                                    <td>{{u.firstName | replacespace}}</td>
                                     <td>{{u.lastName}}</td>
                                     <td>{{u.email}}</td>
                                     <td>{{u.tel}}</td>

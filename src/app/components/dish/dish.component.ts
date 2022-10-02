@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-dish',
@@ -9,6 +9,7 @@ export class DishComponent implements OnInit {
 
   constructor() { }
   @Input() childDish : any;
+  @Output() newPlat = new EventEmitter<any>();
   chefs : any;
   mychefs : any = [];
   firstName : any;
@@ -30,10 +31,21 @@ export class DishComponent implements OnInit {
         console.log("hhhhhh",this.mychefs[i].lastName);
         this.firstName = this.mychefs[i].firstName;
         this.lastName  = this.mychefs[i].lastName;
-      }
-      
+      }  
     }
-    
   }
 
+  deletePlat(id){
+    let plats = JSON.parse(localStorage.getItem("plats") || "[]");
+    let pos;
+    for (let i = 0; i < plats.length; i++) {
+        if(plats[i].id == id){
+          pos = i;
+        }      
+    }
+    plats.splice(pos,1);
+    localStorage.setItem("plats",JSON.stringify(plats));
+    //déclenchement de l'event 
+    this.newPlat.emit(plats);
+  }
 }
