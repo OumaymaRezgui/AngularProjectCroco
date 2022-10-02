@@ -26,6 +26,8 @@ import { AddPlatComponent } from './components/add-plat/add-plat.component';
 import { DashboardChefComponent } from './components/dashboard-chef/dashboard-chef.component';
 import { ChefComponent } from './components/chef/chef.component';
 import { DishComponent } from './components/dish/dish.component';
+import { ReversePipe } from './pipes/reverse.pipe';
+import { ReplacespacePipe } from './pipes/replacespace.pipe';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { DishComponent } from './components/dish/dish.component';
     AddPlatComponent,
     DashboardChefComponent,
     ChefComponent,
-    DishComponent
+    DishComponent,
+    ReversePipe,
+    ReplacespacePipe
   ],
   imports: [
     BrowserModule,
