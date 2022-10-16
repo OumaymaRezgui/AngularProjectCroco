@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -28,6 +27,10 @@ import { ChefComponent } from './components/chef/chef.component';
 import { DishComponent } from './components/dish/dish.component';
 import { ReversePipe } from './pipes/reverse.pipe';
 import { ReplacespacePipe } from './pipes/replacespace.pipe';
+// import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+// import { DataService } from './service/data.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { DisplayUserComponent } from './components/display-user/display-user.component';
 
 @NgModule({
   declarations: [
@@ -54,14 +57,16 @@ import { ReplacespacePipe } from './pipes/replacespace.pipe';
     DashboardChefComponent,
     ChefComponent,
     DishComponent,
-    ReversePipe,
-    ReplacespacePipe
+    ReversePipe, 
+    ReplacespacePipe, DisplayUserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    //InMemoryWebApiModule.forRoot(DataService)
   ],
   providers: [],
   bootstrap: [AppComponent]

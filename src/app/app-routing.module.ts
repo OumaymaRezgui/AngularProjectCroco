@@ -7,6 +7,7 @@ import { BindingComponent } from './components/binding/binding.component';
 import { ChefsComponent } from './components/chefs/chefs.component';
 import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-admin.component';
 import { DashboardChefComponent } from './components/dashboard-chef/dashboard-chef.component';
+import { DisplayUserComponent } from './components/display-user/display-user.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path : "editChef/:id", component : AddChefComponent},
   {path : "editPlat/:id", component : AddPlatComponent},
   {path : "chefs", component : ChefsComponent},
+  {path : "displayUser/:id", component : DisplayUserComponent},
 ];
 
 @NgModule({

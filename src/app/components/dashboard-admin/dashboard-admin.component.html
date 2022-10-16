@@ -34,7 +34,7 @@
                                 </thead>
                                 <tbody>
                                   <tr *ngFor="let u of users">
-                                    <td>{{u.firstName | replacespace}}</td>
+                                    <td>{{u.firstName}}</td>
                                     <td>{{u.lastName}}</td>
                                     <td>{{u.email}}</td>
                                     <td>{{u.tel}}</td>
@@ -43,13 +43,16 @@
                                                     'blue'  : u.speciality == 'FR',
                                                     'green' : u.speciality == 'IT'}">{{u.speciality}}</td>
                                     <td>{{u.experience}}</td>
-                                    <td>{{u.date | date}}</td>
+                                    <td>{{u.date}}</td>
                                     <td>
-                                        <button type="button" class="btn btn-danger" (click)="deleteUser(u.id,u.role)">Delete</button>
+                                        <button type="button" class="btn btn-danger" (click)="deleteUser(u._id)">Delete</button>
                                     </td>
                                     <td>
-                                        <button type="button" class="btn btn-warning" (click)="editUser(u.id,u.role)"> Edit</button>
+                                        <button type="button" class="btn btn-warning" (click)="editUser(u._id,u.role)"> Edit</button>
                                     </td>
+                                    <td>
+                                      <button type="button" class="btn btn-primary" (click)="displayUser(u._id)"> display</button>
+                                  </td>
                                   </tr>
                                 </tbody>
                               </table>

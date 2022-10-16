@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/service/user.service';
 import { MustMatch } from '../confirmPwd';
 
 @Component({
@@ -11,7 +12,7 @@ import { MustMatch } from '../confirmPwd';
 export class SignupComponent implements OnInit {
   signupForm : FormGroup;
   test : Boolean = false;
-  constructor(private formBuilder :  FormBuilder , private router : Router) { }
+  constructor(private formBuilder :  FormBuilder , private router : Router , private userService : UserService) { }
 
   ngOnInit(): void {
     this.signupForm =  this.formBuilder.group({
@@ -37,5 +38,8 @@ export class SignupComponent implements OnInit {
     localStorage.setItem("users",JSON.stringify(users))
     localStorage.setItem("idUser",idUser + 1)
     this.router.navigate(["login"]);
+    this.userService.createUser(f).subscribe((data)=>{
+      console.log(data.message);
+    })
   }
 }

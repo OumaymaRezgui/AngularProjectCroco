@@ -10,7 +10,7 @@
         </div>
         <div class="row">
             <div class="col-sm-6 col-lg-4" *ngFor="let c of chefs">
-              <app-chef [childChef]="c"></app-chef>
+              <app-chef [childChef]="c" (newChef) = update($event)></app-chef>
             </div>
         </div>
     </div>

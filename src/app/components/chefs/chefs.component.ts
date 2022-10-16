@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ChefsComponent implements OnInit {
   users:any;
   chefs : any = [];
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     this.users = JSON.parse(localStorage.getItem("users") || "[]")
@@ -18,5 +18,7 @@ export class ChefsComponent implements OnInit {
        }      
     }
   }
-
+  update(e){
+    this.users = e ;
+   }
 }
